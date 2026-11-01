@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hydroponics</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="auth-screen" id="authScreen">
+    <section class="auth-box">
+      <div class="auth-brand"><img class="brand-logo" src="logo.png" width="75" height="75" alt="Hydroponics logo"><span>Hydro<span>Ponics</span></span></div>
+     
+      <h1 id="authHeading">Welcome back</h1>
+      <p class="auth-description" id="authDescription">Sign in to continue to your dashboard.</p>
+      <form id="authForm">
+        <div class="auth-field hidden" id="nameField">
+          <label for="registerName">Full name</label>
+          <input id="registerName" type="text" placeholder="Your full name" autocomplete="name">
+        </div>
+        <div class="auth-field">
+          <label for="authEmail">Email address</label>
+          <input id="authEmail" type="email" placeholder="name@gmail.com" autocomplete="email" required>
+        </div>
+        <div class="auth-field">
+          <label for="authPassword">Password</label>
+          <input id="authPassword" type="password" placeholder="At least 6 characters" minlength="6" required>
+        </div>
+        <div class="auth-field hidden" id="confirmField">
+          <label for="confirmPassword">Confirm password</label>
+          <input id="confirmPassword" type="password" placeholder="Re-enter your password" minlength="6">
+        </div>
+        <p class="auth-error" id="authError" aria-live="polite"></p>
+        <button class="auth-submit" type="submit" id="authSubmit">Sign in</button>
+      </form>
+      <p class="auth-toggle" id="authToggleText">Don't have an account? <button type="button" id="authToggle">Register</button></p>
+      
+    </section>
+  </main>
+
+  <div class="app hidden" id="dashboardApp">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <img class="brand-logo" src="logo.png" width="75" height="75" alt="Hydroponics logo">
+        <span>Hydro<span>Ponics</span></span>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-item active" data-page="dashboard"><span>▦</span> Dashboard</button>
+        <button class="nav-item" data-page="devices"><span>▤</span> Devices</button>
+        <button class="nav-item" data-page="controls"><span>♨</span> Water Controls</button>
+        <button class="nav-item" data-page="environment"><span>☼</span> Environment</button>
+        <button class="nav-item" data-page="history"><span>〽</span> History</button>
+        <button class="nav-item" data-page="configuration"><span>⚙</span> Configuration</button>
+        <button class="nav-item" data-page="calibration"><span>◴</span> Calibration</button>
+        <button class="nav-item" data-page="ota"><span>▣</span> Hydroponics Update</button>
+      </nav>
+
+      <button class="logout" id="logout">⇥ <span>Logout</span></button>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuBtn">☰</button>
+        <div class="device-select-wrap">
+          <select id="deviceSelect">
+            <option>Hydro1</option>
+            <option>Hydro2</option>
+          </select>
+          <div class="device-meta">Samson 2026 · ◷ Uptime <span id="uptime">0d 1h 38m</span></div>
+        </div>
+        <div class="top-actions">
+          <span class="status-pill"><i></i><span id="connectionText">OFFLINE</span></span>
+          <button class="icon-btn" title="Notifications">♧</button>
+          <button class="icon-btn" title="Settings">⚙</button>
+        </div>
+      </header>
+
+      <section class="content" id="content"></section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
